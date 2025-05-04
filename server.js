@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
@@ -20,7 +21,7 @@ mongoose
 		console.log('Database connected');
 	})
 	.catch((err) => {
-		console.log(err);
+		console.log('err??? ---------', err);
 	});
 
 app.use('/api/auth', authRouter);
@@ -30,5 +31,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-	console.log('listening...');
+	console.log('listening port in...');
 });
